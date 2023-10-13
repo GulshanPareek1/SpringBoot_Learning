@@ -1,5 +1,6 @@
 import java.sql.*;
-
+import java.io.*;
+// for using bufferReader and inputStreamReader class we import java.io.* library 
 public class PreparedInsert {
     public static void main(String[] args) {
         try {
@@ -20,10 +21,23 @@ public class PreparedInsert {
 
             // get the PreparedStatament Object 
             PreparedStatement pstmt = con.prepareStatement(q);
+            
+            // for taking input from user 
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Enter Name: ");
+            String name = br.readLine();
 
+            System.out.println("Enter city: ");
+            String city = br.readLine();
             // set the values 
-            pstmt.setString(1, "Devendra");
-            pstmt.setString(2 , "Sikar");
+            // pstmt.setString(1, "Devendra");
+            // pstmt.setString(2 , "Sikar");
+
+            pstmt.setString(1, name);
+            pstmt.setString(2 , city);
+
+            // here rather then using all this automatic setting of values in database 
+            // we want user to input data
 
             // parameterIndex here means at 1st '?' or at second question mark 
 
