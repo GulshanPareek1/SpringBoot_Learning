@@ -1,3 +1,5 @@
+//PreparedStatement interface use in java for input dynamic data
+
 import java.sql.*;
 import java.io.*;
 // for using bufferReader and inputStreamReader class we import java.io.* library 
